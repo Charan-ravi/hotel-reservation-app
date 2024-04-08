@@ -1,1 +1,25 @@
-<p>reservation-form works!</p>
+<form action="" [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="">Check-In Date:</label>
+    <input type="date" name="" id="" formControlName="checkInDate" />
+    <div *ngIf="reservationForm.get('checkInDate')?.invalid">
+    Check-In Date is required.</div>
+  </div>
+  <div>
+    <label for="">Check-Out Date:</label>
+    <input type="date" name="" id="" formControlName="checkOutDate" />
+  </div>
+  <div>
+    <label for="">Guest Name:</label>
+    <input type="text" name="" id="" formControlName="guestName" />
+  </div>
+  <div>
+    <label for="">Guest Email:</label>
+    <input type="text" name="" id="" formControlName="guestEmail" />
+  </div>
+  <div>
+    <label for="">Room Number:</label>
+    <input type="number" name="" id="" formControlName="roomNumber" />
+  </div>
+  <button type="submit" [disabled]="reservationForm.invalid">Submit</button>
+</form>
